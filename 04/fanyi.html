@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>单词查询</title>
+        <style type="text/css">
+            .wrapper{
+                margin:50px auto;
+                width: 745px;
+                height: 50px;
+                overflow: hidden;
+            }
+            .left{
+                border: 4px solid #2dacbf;
+                height:42px;
+                width:635px;
+                float: left;
+            }
+            .right{
+                border: none;
+                background-color: #2dacbf;
+                height: 50px;
+                width: 90px;
+                float: right;
+            }
+            [type=text]{
+                margin-left: 9px;
+                font-size: 13.5pt;
+                border: none;
+                outline: none;
+                background: transparent;
+                height: 100%;
+                width: 451px;
+            }
+            .btn{
+                border: none;
+                background: transparent;
+                background: url("cha.png") 0 -342px no-repeat;
+                width: 90px;
+                height: 48px;
+            }
+            .btn:hover{
+                     background: url("cha.png") -90px -342px no-repeat;
+                 }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <form action="http://www.dict.cn/search"  target="_blank"  autocomplete="off">
+                <div class="left">
+                    <input type="text"  name="q" placeholder="请输入英/汉词句" >
+                </div>
+                <div class="right">
+                    <input type="submit" value="" title="查词" class="btn">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

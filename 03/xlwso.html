@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜素集合</title>
+</head>
+<style type="text/css">
+    .wrapper{
+        width: 50%;
+        border: 1px solid blue;
+        margin-left: 25%;
+        overflow:hidden;
+            }
+    .left{
+        float: left;
+        width: 60%;
+        background-color: aqua;
+    }
+    .right{
+        float: right;
+        width: 40%;
+        background-color: chartreuse;
+    }
+    .inputbox{
+        width: 100%;
+        height: 37px;
+        outline: none;
+        border: none;
+        background-color: transparent;
+    }
+    .btn{
+        width: 100%;
+        height: 39px;
+        outline: none;
+        border: none;
+        background-color: transparent;
+    }
+</style>
+<body >
+<div class="wrapper" >
+    <form action="http://www.baidu.com/s" autocomplete="off">
+        <div class="left">
+            <input type="text" name="wd" class="inputbox" >
+        </div>
+        <div class="right">
+            <input type="submit" value="百度一下" class="btn">
+        </div>
+    </form>
+</div>
+<br>
+<div class="wrapper" >
+    <form action="http://www.so.com/s" autocomplete="off">
+        <div class="left">
+            <input type="text" name="q" class="inputbox" >
+        </div>
+        <div class="right">
+            <input type="submit" value="360搜素" class="btn">
+        </div>
+    </form>
+</div>
+<br>
+<div class="wrapper" >
+    <form action="http://www.bing.com/search" autocomplete="off">
+        <div class="left">
+            <input type="text" name="q" class="inputbox" >
+        </div>
+        <div class="right">
+            <input type="submit" value="BING" class="btn">
+        </div>
+    </form>
+</div>
+</body>
+</html>

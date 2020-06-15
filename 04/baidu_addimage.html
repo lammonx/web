@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>百度（加相机麦克）</title>
+        <style type="text/css">
+            .wrapper{
+                margin:50px auto;
+                width: 640px;
+                height: 36px;
+                border: 1px solid #317ef3;
+                overflow: hidden;
+            }
+            .left{
+                border: none;
+                height: 36px;
+                width:540px;
+                float: left;
+            }
+            .right{
+                border: none;
+                background-color: #317ef3;
+                height: 36px;
+                width: 100px;
+                float: right;
+            }
+            [type=text]{
+                border: none;
+                outline: none;
+                background: transparent;
+                height: 100%;
+                width: 460px;
+            }
+            [type=submit]{
+                border: none;
+                background: transparent;
+                color: white;
+                font-size: 16px;
+                height: 100%;
+                width: 100%;
+            }
+            .logo1{
+                background-image: url("bd_small.png");
+                background-repeat: no-repeat;
+            }
+            .logo2{
+                background-image: url("mk.png");
+                background-size: 20px 20px;
+                background-repeat: no-repeat;
+            }
+            .xj{
+                margin:10px;
+                float: right;
+                height: 16px;
+                width: 18px;
+            }
+            .mk{
+                margin:10px;
+                float: left;
+                height: 16px;
+                width: 18px;
+                background-position: -2px -2px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <form action="http://www.baidu.com/s"  target="_blank"  autocomplete="off">
+                <div class="left">
+                    <div class="logo1 xj"></div>
+                    <div class="logo2 mk"></div>
+                    <input type="text" name="wd" >
+                </div>
+                <div class="right">
+                    <input type="submit" value="百度一下">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
