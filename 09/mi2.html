@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>小米下拉样式</title>
+    </head>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .head{
+            width: 100%;
+            height: 100px;
+        }
+        .phone{
+            width: 800px;
+            height: 100px;
+            margin:0 auto;
+        }
+        .mi_phone{
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            height: 100%;
+            width: 64px;
+            color: black;
+            cursor: pointer
+        }
+        .mi_phone:hover{
+            color:red;
+        }
+        .photo{
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: height .3s,box-shadow .2s,border-top .3s;
+        }
+        .tu{
+            display: flex;
+            width: 1226px;
+            height: 201px;
+            margin: 0 auto;
+        }
+        .nei{
+            width: 204px;
+            height: 100%;
+            text-align:center;
+            padding: 35px 12px 0;
+            border-right:1px solid #e0e0e0;
+            font-size: 12px;
+        }
+        .tu1{
+            width: 160px;
+            height: 110px;
+            margin: 0 auto 16px;
+            text-align: center;
+        }
+        .name{
+            margin: 0;
+            line-height: 20px;
+            color: #333;
+        }
+        .price {
+            margin: 0;
+            line-height: 20px;
+            color: #ff6700;
+        }
+    </style>
+    <body>
+    <div class="head">
+        <div class="phone">
+            <div class="mi_phone">小米手机</div>
+        </div>
+    </div>
+    <div class="photo">
+        <div class="tu">
+            <div class="nei">
+                <div class="tu1">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/82ddffd7562c54f9166fa876c143ff22.png?thumb=1&w=160&h=110&f=webp&q=90" alt="小米10 pro" width="160" height="110">
+                </div>
+                <div class="name">小米10 pro</div>
+                <p class="price">4999元起</p>
+            </div>
+            <div class="nei">
+                <div class="tu1">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a4a76ee684e51f0ee531ef3dc7f0aeaf.png?thumb=1&w=160&h=110&f=webp&q=90" alt="小米10" width="160" height="110">
+                </div>
+                <div class="name">小米10</div>
+                <p class="price">3999元起</p>
+            </div>
+            <div class="nei">
+                <div class="tu1">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/be92bc4baa572bf467fc9e881fd4be2a.png?thumb=1&w=160&h=110&f=webp&q=90" alt="小米cc9 pro" width="160" height="110">
+                </div>
+                <div class="name">小米cc9 pro</div>
+                <p class="price">2599元起</p>
+            </div>
+            <div class="nei">
+                <div class="tu1">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=160&h=110&f=webp&q=90" alt="小米9 pro 5G" width="160" height="110">
+                </div>
+                <div class="name">小米9 pro 5G</div>
+                <p class="price">3699元起</p>
+            </div>
+            <div class="nei">
+                <div class="tu1">
+                    <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png?thumb=1&w=160&h=110" alt="小米cc9" width="160" height="110">
+                </div>
+                <div class="name">小米cc9</div>
+                <p class="price">1499元起</p>
+            </div>
+            <div class="nei" style="border-right: none" >
+                <div class="tu1">
+                    <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/df9b3e7a562e02a33eb069b3f0119815.png?thumb=1&w=160&h=110" alt="小米cc9e" width="160" height="110">
+                </div>
+                <div class="name">小米cc9e</div>
+                <p class="price">1299元起</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        (function () {
+            let photo=document.querySelector(".photo");
+            let mi_phone=document.querySelector(".mi_phone");
+            let action1=function(){
+                photo.style.height="230px";
+                photo.style.borderTop="1px solid #e0e0e0";
+                photo.style.boxShadow="0 3px 4px rgba(0,0,0,.18)";
+            }
+            photo.addEventListener("mouseover",action1,false);
+            mi_phone.addEventListener("mouseover",action1,false);
+            let action2=function () {
+                photo.style.height="0";
+                photo.style.borderTop="0px solid #e0e0e0";
+            }
+            mi_phone.addEventListener("mouseout",action2,false);
+            photo.addEventListener("mouseout",action2,false);
+            }
+        )();
+    </script>
+    </body>
+</html>
