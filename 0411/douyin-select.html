@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>抖音效果</title>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+            .v-bg-v ,.v-bg{
+                position: absolute;
+                z-index: -10;
+                left: 0;
+                top:0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .head-logo{
+                display: block;
+                position: absolute;
+                top:10px;
+                left: 80px;
+                z-index: 100;
+                width: 108px;
+                height: 45px;
+                background-size: cover;
+                background-position: center;
+                background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/logo_b7a2aca.png");
+            }
+            .head-list{
+                position: absolute;
+                right: 150px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #ffffff;
+                list-style: none;
+                line-height: 75px;
+            }
+            .head-list a{
+                text-decoration: none;
+                color: #fff;
+                text-shadow: 0 1px 2px rgba(0,0,0,.4);
+            }
+            .head-list>li{
+                position: relative;
+                float: left;
+                margin-left: 25px;
+            }
+            .select-img{
+                position: relative;
+                top:-2px;
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/subtract_67c835d.png") center no-repeat;
+                background-size:cover ;
+            }
+            .sound-img{
+                display: block;
+                background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/unmute_1bbc0c3.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 22px;
+                height: 22px;
+                cursor: pointer;
+                margin-top: 125%;
+            }
+            .head-list-first{
+                position: absolute;
+                background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/create-bubble_c2cd9db.png");
+                background-position: 0 0;
+                background-size: cover;
+                top: 53px;
+                left: 50%;
+                margin-left: -99px;
+                height: 42px;
+                width: 198px;
+                font-size: 14px;
+                color: rgba(255,255,255,.9);
+                text-align: center;
+                line-height: 20px;
+                padding-top: 14px;
+                box-sizing: border-box;
+            }
+            .head-select{
+                display: none;
+                position: absolute;
+                top:57px;
+                left: 50%;
+                margin-left: -48px;
+                list-style: none;
+                width: 96px;
+                padding: 8px 0;
+                border-radius: 4px;
+                background-color: #ffffff;
+                box-shadow: 0 0 8px rgba(0,0,0,.16),0 0 2px rgba(0,0,0,.12);
+            }
+            .head-select>li{
+                width: 100%;
+                height: 40px;
+                font-size: 15px;
+                line-height: 40px;
+                text-align: center;
+                cursor: pointer;
+                color: rgba(0,0,0,.9);
+            }
+            .head-select>li:hover{
+                background: rgba(51,51,51,.1);
+            }
+            .head-list>li:hover .head-select{
+                display: block;
+            }
+            .mid{
+                width: 500px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-top: 50px;
+                right: 150px;
+            }
+            .mid-img{
+                float: right;
+                width: 450px;
+                margin-bottom: 50px;
+            }
+            .mid-img>img{
+                width: 100%;
+            }
+            .mid-btn{
+                float: right;
+                cursor: pointer;
+            }
+            .mid-btn>div{
+                float: left;
+                border-radius: 8px;
+                margin-left: 10px;
+                width: 142px;
+                height: 51px;
+                border: 1px solid #000;
+                transition:opacity .15s;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                box-shadow: 1px 1px 7px 2px rgba(0,0,0,.54);
+            }
+            .btn-iphone{
+                background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/appstore_548e83a.png");
+            }
+            .btn-android{
+                background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/android_d461475.png");
+            }
+            .mid-btn>.btn-code{
+                float: right;
+                position: relative;
+                width: 50px;
+                height: 50px;
+                background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/download_6c60bcd.png");
+            }
+            .btn-code>img{
+                width: 223px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                transform: scale(0.23);
+                transform-origin: top right;
+                opacity: 0;
+                transition: .3s all;
+            }
+            .btn-code:hover img{
+                opacity: 1;
+                transform: scale(1);
+            }
+            .btn-code:hover+.btn-iphone+.btn-android,.btn-code:hover+.btn-iphone{
+               display: none;
+            }
+            .btn-iphone:hover,.btn-android:hover{
+                opacity: .5;
+            }
+            .foot{
+                text-align: center;
+                position: absolute;
+                bottom: 10px;
+                font-size: 14px;
+                width: 100%;
+                color: #ffffff;
+                text-shadow: 0 1px 2px rgba(0,0,0,.4);
+            }
+            .police{
+                position: relative;
+                top:4px;
+            }
+            .foot>ul{
+                list-style: none;
+                margin-bottom: 16px;
+            }
+            .foot-list>li{
+                cursor: pointer;
+                padding: 0 5px;
+                display: inline-block;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="v-bg">
+            <video class="v-bg-v" loop muted autoplay>
+                <source src="https://s3.pstatp.com/aweme/resource/web/static/image/index/tvc-v3_0b9db49.mp4" type="video/mp4">
+            </video>
+        </div>
+        <a href="" class="head-logo"></a>
+        <ul class="head-list">
+            <li>
+                <a href="">创作服务平台</a>
+                <div class="head-list-first">原【视频上传】已并入此功能</div>
+            </li>
+            <li>
+                <a href="">开放平台</a>
+            </li>
+            <li>
+                <a href="">系列产品</a>
+                <div class="select-img"></div>
+                <ul class="head-select">
+                    <li>抖音火山版</li>
+                    <li>剪映</li>
+                    <li>多闪</li>
+                </ul>
+            </li>
+            <li>
+                <a href="">抖音直播</a>
+                <div class="select-img"></div>
+                <ul class="head-select">
+                    <li>直播机构入驻</li>
+                </ul>
+            </li>
+            <li>
+                <a href="">合作入驻</a>
+                <div class="select-img"></div>
+                <ul class="head-select">
+                    <li>MCN入驻</li>
+                    <li>抖音特效师</li>
+                    <li>抖音音药人</li>
+                    <li>社会机构入驻</li>
+                </ul>
+            </li>
+            <li>
+                <a href="">企业合作</a>
+                <div class="select-img"></div>
+                <ul class="head-select">
+                    <li>企业服务平台</li>
+                    <li>企业认证</li>
+                    <li>广告投放</li>
+                </ul>
+            </li>
+            <li>
+                <a href="">联系我们</a>
+            </li>
+            <li>
+                <a class="sound-img" href=""></a>
+            </li>
+        </ul>
+        <div class="mid">
+            <div class="mid-img">
+                <img src="https://s3.pstatp.com/aweme/resource/web/static/image/index/slogan_2_8d59f13.png">
+            </div>
+            <div class="mid-btn">
+                <div class="btn-code">
+                <img src="https://s3.pstatp.com/aweme/resource/web/static/image/index/QRcode_c129445.png">
+            </div>
+                <div class="btn-iphone"></div>
+                <div class="btn-android"></div>
+            </div>
+        </div>
+        <div class="foot">
+                <ul class="foot-list">
+                    <span>|</span>
+                    <li>音乐</li>
+                    <span>|</span>
+                    <li>用户服务协议</li>
+                    <span>|</span>
+                    <li>隐私政策</li>
+                    <span>|</span>
+                    <li>账号找回</li>
+                    <span>|</span>
+                    <li>广告投放</li>
+                    <span>|</span>
+                    <li>营业执照</li>
+                    <span>|</span>
+                </ul>
+            <p>2020 © 抖音  | 京ICP备16016397号-3 | 北京微播视界科技有限公司 |  京B2-20170846</p>
+            <p>中国互联网举报中心 | 网络文化许可证-京网文-（2016）2282-264号 | 客户服务热线：400-992-2556 | 违法和不良信息举报：400-140-2108 | 举报邮箱：jubao@douyin.com</p>
+            <p>
+                <img class="police" src="https://s3.pstatp.com/aweme/resource/web/static/image/gongan_d0289dc.png">
+                京公网安备 11010802023605号|地址 : 北京市海淀区知春路51号4层408 </p>
+        </div>
+    </body>
+</html>

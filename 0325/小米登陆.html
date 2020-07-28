@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>小米账号-登录</title>
+    </head>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: arial,"Hiragino Sans GB","Microsoft YaHei","微軟正黑體","儷黑 Pro",sans-serif;
+        }
+        .head,.main{
+            width: 1130px;
+            margin: 0 auto;
+        }
+        .logo{
+            width: 200px;
+            height: 98px;
+            background: url("https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png")  no-repeat;
+        }
+        .logo a{
+            display: block;
+            height: 98px;
+            text-indent: -7777em;
+        }
+        .bg{
+            position: absolute;
+            top: 98px;
+            left: 0;
+            background-image: url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12c02030ee73caa35a19be59c5b1ec78.jpg");
+            width: 100%;
+            height: 588px;
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+        .bg a{
+            display: block;
+            height: 588px;
+            text-indent: -7777em;
+        }
+        .foot{
+            margin-top: 556px;
+            height: 180px;
+            width: 100%;
+        }
+        .main{
+            position: relative;
+            margin-top: 32px;
+        }
+        .login{
+            position: absolute;
+            width: 410px;
+            height: 556px;
+            right: 0;
+            background-color: white;
+        }
+        .text{
+            padding: 27px 0 24px;
+            text-align: center;
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .text span:first-child,.text span:last-child:hover{
+            color: #f56600;
+        }
+        span{
+            cursor: pointer;
+        }
+        .line{
+            cursor: default;
+            margin: 0 41px 0 36px;
+            border: 1px solid #e0e0e0;
+        }
+        .input- input{
+            width: 316px;
+            height: 22px;
+            line-height: 22px;
+            padding: 13px 16px 13px 14px;
+            margin: 0 auto 14px;
+            border: 1px solid #e0e0e0;
+            display: block;
+        }
+        input::placeholder{
+            color: #a3a3a3;
+        }
+        .btn{
+            background-color: #ff6700;
+            width: 348px;
+            height: 50px;
+            line-height: 50px;
+            display: block;
+            margin: 24px auto 10px auto;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        .text_btn{
+            width: 348px;
+            margin: 0 auto;
+            font-size: 0;
+            line-height: normal;
+        }
+        .left{
+            float: left;
+            font-size: 14px;
+            color: #ff5700;
+        }
+        .right{
+            float: right;
+            font-size: 0;
+            margin-right: 5px;
+        }
+        .right span{
+            color: #999;
+            font-size: 14px;
+        }
+        .other-type{
+            padding-top: 143px;
+            text-align: center;
+            width: 348px;
+            margin: 0 auto;
+        }
+        fieldset{
+            border: none;
+            border-top:1px solid #e0e0e0;
+            padding-top: 0px;
+        }
+        legend{
+            font-size: 14px;
+            color: #bbb;
+        }
+        .logo-type{
+            padding-top: 3px;
+            text-align: center;
+            width: 348px;
+        }
+        .logo-type a{
+            width: 30px;
+            height: 30px;
+            margin: 0 15px;
+            display: inline-block;
+            border-radius:50% ;
+        }
+        .logo-type a span{
+            background:url("https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png");
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            display: block;
+            margin: 4px auto 0;
+        }
+        .logo1{
+            background-color: #0288d1;
+        }
+        .logo2{
+            background-color: #d32f2f;
+        }
+        .logo3{
+            background-color: #0ae;
+        }
+        .logo4{
+            background-color: #00d20d;
+        }
+         .logo-type a .type1{
+            background-position: -19px 0;
+        }
+        .logo-type a .type2{
+            background-position:-38px 0;
+        }
+        .logo-type a .type3{
+            background-position:-57px 0;
+            margin-top: 6px;
+            margin-left: 4px;
+            width: 25px;
+        }
+        .logo-type a .type4{
+            background-position:-83px 0;
+            width: 24px;
+            margin-top: 6px;
+        }
+    </style>
+    <body>
+        <div class="head">
+            <div class="logo">
+                <a href="https://www.mi.com/index.html" target="_parent">mi</a>
+            </div>
+        </div>
+        <div class="bg">
+            <a href="https://item.mi.com/product/10000223" target="_parent">mi</a>
+        </div>
+        <div class="main">
+            <div class="login">
+                <div class="text">
+                    <span>帐号登录</span>
+                    <span class="line"></span>
+                    <span>扫码登录</span>
+                </div>
+                <div class="input-">
+                    <input type="text" placeholder="邮箱/手机号码/小米ID">
+                    <input type="password" placeholder="密码">
+                </div>
+                <button class="btn">登录</button>
+                <div class="text_btn">
+                    <span class="left">手机短信登录/注册</span>
+                    <div class="right">
+                        <span>立即注册</span>
+                        <span class="line" style="margin: 0 5px"></span>
+                        <span>忘记密码? </span>
+                    </div>
+                </div>
+                <div class="other-type">
+                    <fieldset>
+                        <legend>其他方式登录</legend>
+                    </fieldset>
+                    <div class="logo-type">
+                        <a class="logo1" href="https://account.xiaomi.com/pass/sns/login/auth?appid=100284651&&callback=https%3A%2F%2Forder.mi.com%2Flogin%2Fcallback%3Ffollowup%3Dhttps%253A%252F%252Fwww.mi.com%252Findex.html%26sign%3DMjM0MWU0NjBlOTU1YzY4NGQzOTc3MDk4N2M2MjQ5Y2ZiZTMxNTFlZQ%2C%2C&sid=mi_eshop" title="QQ登录" target="_blank">
+                            <span class="type1"></span>
+                        </a>
+                        <a class="logo2" href="https://account.xiaomi.com/pass/sns/login/auth?appid=2996826273&&callback=https%3A%2F%2Forder.mi.com%2Flogin%2Fcallback%3Ffollowup%3Dhttps%253A%252F%252Fwww.mi.com%252Findex.html%26sign%3DMjM0MWU0NjBlOTU1YzY4NGQzOTc3MDk4N2M2MjQ5Y2ZiZTMxNTFlZQ%2C%2C&sid=mi_eshop" title="微博登录" target="_blank">
+                            <span class="type2"></span>
+                        </a>
+                        <a class="logo3" href="https://account.xiaomi.com/pass/sns/login/auth?appid=2088011127562160&&callback=https%3A%2F%2Forder.mi.com%2Flogin%2Fcallback%3Ffollowup%3Dhttps%253A%252F%252Fwww.mi.com%252Findex.html%26sign%3DMjM0MWU0NjBlOTU1YzY4NGQzOTc3MDk4N2M2MjQ5Y2ZiZTMxNTFlZQ%2C%2C&sid=mi_eshop" title="支付宝登录" target="_blank">
+                            <span class="type3"></span>
+                        </a>
+                        <a class="logo4" href="https://account.xiaomi.com/pass/sns/login/auth?appid=wxxmzh&scope=snsapi_login&callback=https%3A%2F%2Forder.mi.com%2Flogin%2Fcallback%3Ffollowup%3Dhttps%253A%252F%252Fwww.mi.com%252Findex.html%26sign%3DMjM0MWU0NjBlOTU1YzY4NGQzOTc3MDk4N2M2MjQ5Y2ZiZTMxNTFlZQ%2C%2C&sid=mi_eshop" title="微信登录" target="_blank">
+                            <span class="type4"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot"></div>
+    </body>
+</html>

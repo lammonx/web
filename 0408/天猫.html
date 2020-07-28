@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>天猫相关效果实现</title>
+    </head>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .select-one .one-line-text a{
+            height: 31px;
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .select{
+            width: 100%;
+            height: 500px;
+            background-color: #c8c8c8;
+        }
+        .one{
+
+            margin-top: 100px;
+            border-top: 2px solid red;
+        }
+        .wrapper{
+            width: 1230px;
+            margin: 0 auto;
+        }
+        .select-text{
+            position: relative;
+            float: left;
+            width: 200px;
+            height: 100%;
+            background-color: rgba(0,0,0,0.55);
+        }
+        .one-line-text{
+            height: 31.2px;
+            line-height: 31.2px;
+            color: #fff;
+            font-size: 14px;
+        }
+        .one-line-text span{
+            display: inline-block;
+            margin-left: 14px;
+            margin-right: 4px;
+            height: 31px;
+            line-height: 31px;
+            font-size: 16px;
+        }
+        .show-box{
+            position: absolute;
+            top:0;
+            left: 200px;
+            width: 860px;
+            height: 100%;
+            background-color: #fff;
+            display: none;
+        }
+        .select-one:hover .show-box{
+            display: block;
+        }
+        .select-one:hover .one-line-text a,.select-one:hover .one-line-text{
+            color:red;
+            background-color: #ffffff;
+        }
+        .two{
+            border: none;
+            background-color: #eeeeee;
+        }
+        .one-line{
+            margin-bottom: 1px;
+            height: 108px;
+        }
+        .cell-10-1{
+            background-color: #ffffff;
+            margin-right: 1px;
+            width: 122px;
+            height: 100%;
+            position: relative;
+            float: left;
+            text-align: center;
+            z-index: 10;
+        }
+        .bg img{
+            width: 82%;
+            height: 50px;
+            margin-top: 25%;
+        }
+        .cell-10-1 a{
+            text-decoration: none;
+            position: absolute;
+            z-index:20;
+            top:0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.8);
+            transition: all .3s ease-out;
+            opacity:0;
+            text-align: center;
+        }
+        .youhui{
+            margin-top: 32px;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-size: 12px;
+        }
+        .btn{
+            background-color: #ff0036;
+            color: #fff;
+            font-size: 12px;
+            width: 63px;
+            height: 18px;
+            line-height: 15px;
+            border-radius: 9px;
+            margin: 0 auto;
+        }
+        .cell-10-1 a:hover{
+            opacity: 1;
+        }
+        .foot{
+            position: fixed;
+            z-index: 100;
+            left: 250px;
+            bottom: 100px;
+        }
+        .daohang{
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            color: #fff;
+            background-color: rgba(0,0,0,.6);
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .daohang:hover{
+            background-color: #00d20d;
+        }
+        .foot span{
+            position: relative;
+            top: 6px;
+            display: block;
+            line-height: 12px;
+            width: 24px;
+            height: 28px;
+            margin: 1px auto;
+        }
+        .no1{
+            background-color: red!important;
+            font-size: 12px;
+        }
+        .no2{
+            background-color: #8c8c8c!important;
+        }
+        .head{
+            z-index: 90;
+            position: sticky;
+            top:0;
+            height: 50px;
+            width: 100%;
+            background-color: #ff0036;
+        }
+        .head-over{
+            z-index: 95;
+            height: 50px;
+            width: 100%;
+            position: absolute;
+            background-color: #eeeeee;
+        }
+        .head-logo{
+            float: left;
+            color: #ffffff;
+            line-height: 50px;
+            font-size: 23px;
+        }
+        .head-search{
+            margin-left: 120px;
+            float: left;
+        }
+        .head-btn{
+            float: left;
+        }
+        .head-search input{
+            float: left;
+            box-sizing: border-box;
+            height: 30px;
+            padding: 8px;
+            width: 650px;
+            background: #ffffff;
+            border: none;
+            outline: transparent;
+            margin-top:10px ;
+        }
+        .head-btn{
+            width: 80px;
+            height: 30px;
+            color: #ffffff;
+            margin-top: 10px;
+            line-height: 30px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+    <body>
+    <div class="foot">
+        <div class="daohang no1">导航
+        </div>
+        <div class="daohang">
+            <span>天猫超市</span>
+        </div>
+        <div class="daohang">
+            <span>天猫超市</span>
+        </div>
+        <div class="daohang">
+            <span>天猫超市</span>
+        </div>
+        <div class="daohang">
+            <span>天猫超市</span>
+        </div>
+        <div class="daohang">
+            <span>天猫超市</span>
+        </div>
+        <div class="daohang">
+            <span>天猫超市</span>
+        </div>
+        <div class="daohang">
+            <span>天猫超市</span>
+        </div>
+        <div class="daohang">
+            <span>天猫超市</span>
+        </div>
+        <div class="daohang no2">
+            <span>^ 顶部</span>
+        </div>
+    </div>
+    <div class="select one">
+        <div class="wrapper">
+            <div class="select-text">
+                <div class="select-one">
+                    <div class="one-line-text">
+                    <span >👩‍</span>
+                    <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                    /
+                    <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+                <div class="select-one">
+                    <div class="one-line-text">
+                        <span >👩‍</span>
+                        <a href="https://nvzhuang.tmall.com/?spm=875.7931836/B.category2016010.1.27984265hPjm1Q&acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">女装</a>
+                        /
+                        <a href="https://neiyi.tmall.com/?acm=lb-zebra-148799-667863.1003.4.708026&scm=1003.4.lb-zebra-148799-667863.OTHER_14561681423980_708026">内衣</a>
+                    </div>
+                    <div class="show-box"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    <div>
+        <div class="head-over"></div>
+        <div class="head">
+            <div class="wrapper">
+                <div class="head-logo">TMALL天猫</div>
+                <div class="head-search">
+                    <input type="text" placeholder="搜索 天猫 商品/品牌/店铺">
+                    <div class="head-btn">搜索</div>
+                </div>
+            </div>
+        </div>
+        <div class="select two">
+            <div class="wrapper" style="position: relative; top:50px;">
+                <div class="one-line">
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="one-line">
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="one-line">
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                    <div class="cell-10-1">
+                        <div class="bg">
+                            <img src="https://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_100x150q100.jpg_.webp">
+                        </div>
+                        <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.1.27984265hPjm1Q&user_number_id=2811185140&abtest=&pvid=86dcfe0f-405f-4277-909d-0ab76363384a&pos=1&abbucket=&brandId=99906590&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
+                            <div class="youhui">优惠劵￥200</div>
+                            <div class="btn">点击进入</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="select"></div>
+        <div class="select two"></div>
+        <div class="select"></div>
+        <div class="select two"></div>
+        <div class="select"></div>
+        <div class="select two"></div>
+    </div>
+    </body>
+</html>

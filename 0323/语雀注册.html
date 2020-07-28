@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>语雀注册</title>
+        <style type="text/css">
+            body{
+                margin: 0;
+                padding: 0;
+                background-color: #fafafa;
+            }
+            .main{
+                box-sizing: border-box;
+                width: 400px;
+                margin: 100px auto;
+                background-color: #fff;
+                border: 1px solid #e9e9e9;
+                border-radius: 4px;
+                padding: 40px 8px 16px;
+            }
+            .logo{
+                margin: 0 auto;
+                text-align: center;
+                padding-bottom: 20px;
+            }
+            .logo img{
+                width: 64px;
+                height: 64px;
+                border-radius: 100%;
+                cursor: pointer;
+            }
+            .wrapper{
+                font-size: 14px;
+                text-align: center;
+            }
+            .text{
+                margin-bottom: 32px;
+            }
+            .text .text_:first-child{
+                font-size: 32px;
+                line-height: 1.2;
+                color: #262626;
+            }
+            .text .text_:last-child{
+                color: #595959;
+                margin-top: 8px;
+                font-size: 18px;
+            }
+            .input{
+                width: 320px;
+                margin: 0 auto;
+                box-sizing: border-box;
+            }
+            .input-text,.input-num{
+                height: 40px;
+                margin-bottom: 25px;
+            }
+            .input-text-,.input-num-:first-child{
+                font-size: 16px;
+                height: 40px;
+                border: 1px solid #d9d9d9;
+                box-sizing: border-box;
+                line-height: 1.5;
+            }
+            .input-text .input-text-:first-child{
+                cursor: pointer;
+                float: left;
+                width: 88px;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                border-right:none;
+            }
+            .input-text .input-text-:last-child{
+                float: left;
+                width: 232px;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+            .input-num-:first-child{
+                float: left;
+                width: 188px;
+                border-radius: 4px;
+            }
+            .input-num-:last-child{
+                float: right;
+                width: 124px;
+            }
+            .num-btn{
+                border:1px solid #e8e8e8;
+                border-radius: 4px;
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                font-size: 14px;
+                background: #fff;
+                color: #595959;
+                text-align: center;
+                cursor: pointer;
+            }
+            .btn{
+                height: 40px;
+                font-size: 16px;
+                border-radius: 4px;
+                overflow: hidden;
+            }
+            .zc-btn{
+                border:none;
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                font-size: 16px;
+                color: #fff;
+                background-color: #25b864;
+                text-align: center;
+                cursor: pointer;
+                transition: background-color .3s;
+            }
+            .btn-text{
+                margin-top: 8px;
+                color: #8c8c8c;
+                text-align: center;
+            }
+            .logo_{
+                margin-top:45px ;
+                margin-bottom: 30px;
+            }
+            .logo-{
+                display: inline-block;
+                width: 28px;
+                height: 29px;
+                background-image: url(https://gw.alipayobjects.com/mdn/prod_resou/afts/img/A*wLosTZsNyYcAAAAAAAAAAABjARQnAQ);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                vertical-align: middle;
+                margin-right: 20px;
+                cursor: pointer;
+            }
+            .logo-:first-child{
+                background-position: 0 -28.7px;
+            }
+            .wechat{
+                background-position: 0 -59.5px;
+            }
+            .logo-:last-child{
+                background-image: url(https://gw.alipayobjects.com/zos/basement_prod/740e223d-7c72-4259-93f3-df7e608e9376.svg);
+                margin-right: 0;
+            }
+            .l-text{
+                font-size: 14px;
+                text-align: center;
+                color: #096dd9;
+                cursor: pointer;
+                transition: color .3s;
+            }
+            .zhong{
+                display: inline-block;
+                width: 1px;
+                height: 14px;
+                vertical-align: middle;
+                margin: 0 5px 3px;
+                background-color: #e8e8e8;
+            }
+            input::placeholder{
+                color: #cbcbcb;
+            }
+            input{
+                outline-color: #24aa59;
+            }
+            .input-text- span{
+                font-size: 15px;
+                line-height: 16px;
+                float: left;
+                margin: 12px 10px;
+                color: #646464;
+            }
+            .input-text-:hover,.input-num-:first-child:hover{
+                box-shadow: 0 0  2px #24cb76;
+            }
+            .input-text-:first-child:hover{
+                border-right: 1px solid #d9d9d9;
+            }
+            .zc-btn:hover{
+                background-color: #24aa59;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="logo">
+                <img src="https://gw.alipayobjects.com/mdn/prod_resource/afts/img/A*FsnmRIiTfe0AAAAAAAAAAABkARQnAQ">
+            </div>
+            <div class="wrapper">
+                <div class="text">
+                    <div class="text_">语雀</div>
+                    <div class="text_">专业云端知识库</div>
+                </div>
+                <div class="input">
+                    <div class="input-text">
+                        <div class="input-text-">
+                            <span>+86</span>
+                        </div>
+                        <input type="text" class="input-text-" placeholder=" 手机号">
+                    </div>
+                    <div class="input-num">
+                        <input type="text" class="input-num-" placeholder=" 6 位短信验证码">
+                        <div class="input-num-">
+                            <button type="button" class="num-btn">获取短信验证码</button>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button type="button" class="zc-btn">快速注册</button>
+                    </div>
+                    <p class="btn-text">
+                        注册即表明同意
+                        <span style="color: #096dd9;cursor: pointer;">《语雀服务协议》</span>
+                    </p>
+                </div>
+                <div class="logo_">
+                    <div class="logo-"></div>
+                    <div class="logo-"></div>
+                    <div class="logo- wechat"></div>
+                    <div class="logo-"></div>
+                </div>
+                <p class="l-text">
+                    <span>直接登录</span>
+                    <span class="zhong"></span>
+                    <span>遇到问题</span>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

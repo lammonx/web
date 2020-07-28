@@ -1,0 +1,475 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.hw{
+    width: 100%;
+}
+.head{
+    height: 28px;
+    line-height: 28px;
+    background-color: #000;
+}
+.container{
+    width: 1128px;
+    margin: auto;
+}
+.head-line{
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+.head-line-left{
+    display: flex;
+}
+.head-line-left-v,.head-line-right-img2{
+    display: block;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.head-line-right{
+    display: flex;
+    font-weight: bold;
+}
+.head-line-right-text1{
+    margin-left: 10px;
+}
+.head-line-right-img3{
+    border-left: #949494 1px solid;
+    padding-left: 12px;
+    cursor: pointer;
+}
+.head-line-right-text2{
+    padding-right:12px ;
+    padding-left: 5px;
+}
+.head-line-right a:hover{
+    text-decoration:underline;
+}
+.head-show{
+    height: 74px;
+}
+.head-show-line{
+    height: 74px;
+    line-height: 74px;
+    color: #282828;
+    font-size: 18px;
+    box-shadow: 2px 0px 10px rgba(0,0,0,.2);
+}
+.head-show-line-items{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.huawei-logo{
+    position: relative;
+    overflow: hidden;
+    margin-right: 60px;
+    
+}
+.huawei-logo>img{
+    margin-top: 20px;
+    width: 133px;
+}
+.head-show-phone{
+    display: flex;
+    padding-right: 28px;
+}
+.head-show-phone>.phone{
+    padding-right: 20px;
+    font-size: 27px;
+}
+.head-show-phone>.select{
+    padding-left: 5px;
+    font-size: 16px;
+}
+.head-show-shop{
+    margin-top: 12px;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    padding-right: 28px;
+}
+.head-show-shop>.share-box{
+    margin-left: 10px;
+    position: relative;
+    top:50%;
+    margin-top: -9px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #000;
+}
+.head-show-shop>.share-box>.share{
+    position: absolute;
+    bottom:5px;
+    left:5px;
+    line-height: 20px;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    text-align: center;
+}
+.head-show-shop .share-box .share .share-img{
+    font-size: 20px;
+    line-height: 20px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+}
+.head-show-slogo{
+    margin-left: 130px;
+    cursor: pointer;
+}
+.head-show-shop:hover,.head-show-phone:hover>.text{
+    color: #f66f6a;
+}
+.head-show-shop:hover .share-box {
+    border-color:#f66f6a ;
+}
+.head-show-shop:hover .share-box .share .share-img{
+    bottom: 0;
+    left: 0;
+}
+.mid{
+    background-color: ;
+}
+.mid-box{
+    width: 1366px;
+    margin: auto;
+}
+.bgimg-foot{
+    height: 183px;
+}
+.bgimg-foot-item{
+    display: flex;
+    background-color: #fff;
+    position: relative;
+    width: 1106px;
+    margin: auto;
+    padding: 20px 0;
+    border-radius: 5px;
+    bottom: 100px;
+    box-shadow: 0 0 100px rgba(0,0,0,.2);
+    height: 183px;
+}
+.bgimg-foot-item1{
+    display: block;
+    width: 354px;
+    height: 143px;
+    padding: 10px 45px 0px 40px ;
+    color: #222222;
+}
+.bgimg-foot-item1>img{
+   float: left;
+   padding: 10px 30px 20px 0;
+}
+.bgimg-foot-item1>.title{
+    font-size: 22px;
+    margin-bottom: 5px;
+    line-height: 34px;
+    font-weight: bold;
+}
+.bgimg-foot-item1>.text{
+    line-height: 30px;
+    color: #666666;
+    font-size: 18px;
+}
+.mid-a{
+    border-left: 1px solid #d0d0d0;
+    border-right: 1px solid #d0d0d0;
+}
+.bgimg-foot-item1:hover .title{
+    color: #f66f6a;
+}
+.bgimg2{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+.bgimg2-left{
+    transition: all 0.2s;
+    width: 620px;
+    height: 450px;
+    background-color: #37bcde;
+    border-top-right-radius:5px ;
+    border-bottom-right-radius: 5px;
+    position: relative;
+}
+.bgimg2-right{
+    position: relative;
+    border-radius: 5px;
+    display: block;
+    background-color: #dde6ed;
+    width: 453px;
+    height: 640px;
+    margin-right: 8.33333333333%;
+}
+.bgimg2-right>.text{
+    padding: 40px 60px ;
+}
+.bgimg2-right .text .text1{
+    font-size: 14px;
+    line-height: 22px;
+    color: #666666;
+}
+.bgimg2-right .text .text2{
+    font-size: 38px;
+    line-height: 48px;
+    font-weight: bold;
+    margin-top: 10px ;
+}
+.bgimg2-right .text .text3{
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 12px;
+}
+.bgimg2-right .text .text4{
+    font-size: 22px;
+    color: #222222;
+    position: absolute;
+    bottom: 40px;
+}
+.bgimg2-right .text .text4>div{
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    position: absolute;
+    left: 110px;
+    top: 3px;
+    transition: all .3s;
+}
+.bgimg2-right:hover  .text .text4>div{
+    left: 115px;
+}
+.bgimg2-left>.img1{
+    position: absolute;
+    top: 60px;
+    right: -55px;
+}
+.bgimg2-left>.img2{
+    position: absolute;
+    bottom:-230px;
+    right: -55px;
+}
+.bgimg2-left>.img3{
+    position: absolute;
+    top: 100px;
+    left: 165px;
+}
+.bgimg2-left>.text1{
+    font-weight: bold;
+    color: #000;
+    font-size: 27px;
+    position: absolute;
+    top: 160px;
+    left: 165px;
+}
+.bgimg2-left>.text2{
+    font-size: 22px;
+    position: absolute;
+    bottom: 100px;
+    left: 165px;
+}
+.bgimg2-left>.text2>div{
+    position: absolute;
+    top: 3px;
+    left: 100px;
+}
+.bgimg2-left>.text3{
+    position: absolute;
+    font-size: 12px;
+    bottom: 15px;
+    left: 165px;
+}
+.bgimg2-left:hover .text2>div{
+    left: 110px;
+}
+.bgimg2-left:hover .img1{
+    top: 50px;
+}
+.bgimg2-left:hover .img2{
+    bottom: -235px;
+}
+.bgimg3{
+    margin-bottom: 100px;
+}
+.show1-head{
+    display: flex;
+    justify-content: space-between;
+    padding-right:15px;
+}
+.show1-head-title{
+    font-size: 38px;
+    line-height: 40px;
+    font-weight: bold;
+}
+.show1-head-text{
+    position: relative;
+    line-height: 40px;
+    font-size: 22px;
+    display: flex;
+}
+.show1-head-text>div{
+    position: absolute;
+    left: 115px;
+}
+.show1-head-text:hover>div{
+    left: 120px;
+}
+.shimg1{
+    margin: 70px auto;
+    width: 100%;
+    display: flex;
+}
+.shimg1>.left{
+    text-align: center;
+    font-size: 22px;
+    line-height: 400px;
+    margin-top: 50px;
+    border-radius: 5px;
+    height: 420px;
+    width: 100%;
+    background-color: #dce6ee;
+}
+.shimg1>.right>img{
+    border-radius: 5px;
+}
+.sh2-img{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 230px;
+}
+.sh2-img1{
+    position: relative;
+    top:130px;
+    width: 310px;
+    height: 339px;
+    border-radius: 5px;
+    background-color: #dde6ed;
+}
+.sh2-img1>img{
+    width: 100%;
+    position: absolute;
+    top:-90px;
+    border-top-left-radius:5px ;
+    border-top-right-radius: 5px;
+}
+.sh2-img1>.text1{
+    position: absolute;
+    left: 30px;
+    bottom: 210px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #666666;
+}
+.sh2-img1>.text2{
+    position: absolute;
+    left: 30px;
+    width: 230px;
+    bottom: 135px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 32px;
+}
+.sh2-img1>.text3{
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    font-size: 22px;
+    line-height: 34px;
+    color: #222222;
+}
+.sh2-img1>.text3>div{
+    position: absolute;
+    top:3px;
+    font-size: 30px;
+    left:55px;
+}
+.sh2-img1:hover img{
+    right: 15px;
+}
+.sh2-img1:hover .text3>div{
+    left: 60px;
+}
+.sh3-left{
+    height: 496px;
+    position: relative;
+    background-color: #dde6ed;
+    width: 408px;
+    border-radius:5px ;
+}
+.sh3-left>img{
+    border-radius:5px ;
+    width: 100%;
+    height: 232px;
+}
+.sh3-left>.text1{
+    position: absolute;
+    left: 30px;
+    bottom: 210px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #666666;
+}
+.sh3-left>.text2{
+    position: absolute;
+    left: 30px;
+    width: 230px;
+    bottom: 135px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 32px;
+}
+.sh3-left>.text3{
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    font-size: 22px;
+    line-height: 34px;
+    color: #222222;
+}
+.sh3-left>.text3>div{
+    position: absolute;
+    top:3px;
+    font-size: 30px;
+    left:55px;
+}
+.sh3-left:hover .text3>div{
+    left: 60px;
+}
+.sh3-right{
+    width: 450px;
+}
+.sh3-right>.text1{
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666666;
+}
+.sh3-right>.text2{
+    line-height: 30px;
+    font-size: 18px;
+}
+.sh3-img1{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.foot-top{
+    text-align: center;
+    height: 500px;
+    font-size: 100px;
+    height: 400px;
+    background-color: #f0f0f0;
+}

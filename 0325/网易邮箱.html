@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>163网易邮箱登录</title>
+    </head>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .head{
+            box-sizing: border-box;
+            width:100%;
+            padding: 0 40px;
+            height: 70px;
+        }
+        .logo-head{
+            margin-top: 20px;
+            background: url(data:image/png;base64,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) 50% no-repeat;
+            background-size: 100% 100%;
+            display: inline-block;
+            width: 144px;
+            height: 32px;
+        }
+        .bg{
+            width: 100%;
+            height: 640px;
+            background-image: url("https://mimg.127.net/m/lc/img/LoginBackgroundPic/2277/1/promPic.jpg");
+            background-repeat: no-repeat;
+            background-position: top;
+            background-color: rgb(190,209,201);
+        }
+        .foot{
+            width: 100%;
+            height: 100px;
+        }
+        .main{
+            width:1100px;
+            height: 640px;
+            margin: 0 auto;
+            position:relative;
+        }
+        .link a{
+            position: absolute;
+            width: 650px;
+            height: 640px;
+            left: 0;
+            top:0;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .select-{
+            position: absolute;
+            right: 508px;
+            bottom:50px;
+            text-align: right;
+        }
+        .select- span{
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-right: 7px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAOVBMVEVHcEz+/v7ExMTX19cAAAAAAACBgYEAAAAAAAD////9/f05OTn29vbh4eHm5uapqant7e3y8vL5+fmNma8tAAAAE3RSTlMA8VFpCQcvGhL+4h++eoQ+mKvNOLYd8wAAAKlJREFUOMu1lNsOhDAIRL3QUrpedv3/j9WYfWgtkDHRebM5GSyF6bq3RSnxoZTIp7iQyYYKO9GgcQ12oiCnkGwK8ms8Ha4iA7sKjmGMmiU13NDn8pMsw1Fk1v5S4UatRdfKi/TD5Yi0yt+W+9euwM9P8mq0suImydF6x/Jgki3yo6BbGr4M3B644fAT4kMBjxk8uPgqwMuFryseAHik4CGFxx4epDei+RHtd/Ec29SiIBYAAAAASUVORK5CYII=) 50% no-repeat;
+            background-size: 100% 100%;
+            cursor: pointer;
+        }
+        .select- span:first-child:hover{
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAASFBMVEUAAAAAAAD+/v6dnZ0AAAAAAAAAAABHcEwAAAAAAAD6+vpCQkK3t7dfX1/Z2dnu7u7GxsbFxcV4eHgXFxfn5+f29vby8vL///9I0lH3AAAAF3RSTlMzDPdkEgQrACYf6j91SJ7JhoNRN7fb0Pqjdx8AAADaSURBVDjLrZXrDoIwDIW70c4OUETUvf+bCovRXTpSjOcfy5d1O2sPcFIKfgQJPTsAxx5pB0SGRIwN0GRYRI0EehDkK5AYRDHlIDloyFEGMjTFKehhR/4LGtiV+YBp4fMgF99ATFd721UkvsHsJnOwo7TlClK+OtowlyRFEPPFpbPhUtcGwZuuL0kfwdrsWx/uS3HIFRRe7/wIU2qTi6Dk8fAMU/p9DFSXVl9GbQ+W3Gb4IhiufsL8kNd2U+jbTN24+lFQD5d+XPUBoI4UfUgdiD19kB6I5r/8FV6trBUgmwUyawAAAABJRU5ErkJggg==") 50% no-repeat;
+            background-size: 100% 100%;
+            transform: rotate(180deg);
+        }
+        .select- span:last-child:hover{
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAASFBMVEUAAAAAAAD+/v6dnZ0AAAAAAAAAAABHcEwAAAAAAAD6+vpCQkK3t7dfX1/Z2dnu7u7GxsbFxcV4eHgXFxfn5+f29vby8vL///9I0lH3AAAAF3RSTlMzDPdkEgQrACYf6j91SJ7JhoNRN7fb0Pqjdx8AAADaSURBVDjLrZXrDoIwDIW70c4OUETUvf+bCovRXTpSjOcfy5d1O2sPcFIKfgQJPTsAxx5pB0SGRIwN0GRYRI0EehDkK5AYRDHlIDloyFEGMjTFKehhR/4LGtiV+YBp4fMgF99ATFd721UkvsHsJnOwo7TlClK+OtowlyRFEPPFpbPhUtcGwZuuL0kfwdrsWx/uS3HIFRRe7/wIU2qTi6Dk8fAMU/p9DFSXVl9GbQ+W3Gb4IhiufsL8kNd2U+jbTN24+lFQD5d+XPUBoI4UfUgdiD19kB6I5r/8FV6trBUgmwUyawAAAABJRU5ErkJggg==") 50% no-repeat;
+            background-size: 100% 100%;
+            transform: rotate(0deg);
+        }
+        .select- span:last-child{
+            margin-right: 0;
+            transform: rotate(180deg);
+        }
+        .wrapper{
+            padding: 0;
+            width: 400px;
+            height: 540px;
+            top: 50px;
+            right: 50px;
+            text-align: left;
+            position: absolute;
+            z-index: 2;
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px 0 rgba(0,0,0,.1);
+        }
+        .title{
+            margin: 0 0 32px;
+            padding: 40px 0 0;
+            color: #333;
+            font-size: 20px;
+            line-height: 28px;
+            text-align: center;
+        }
+        *{
+            overflow: hidden;
+            outline: 0;
+        }
+        input{
+            color: #333;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding-left:8px ;
+        }
+        .input-name,.input-pwd{
+            width: 340px;
+            height: 46px;
+            border: 1px solid #dadada;
+            font-size: 12px;
+            line-height: 44px;
+            margin:0 auto 22px ;
+        }
+        .usr,.pwd{
+            float: left;
+            width: 21px;
+            text-align: center;
+            padding: 0 5px 0 10px;
+        }
+        .usr span,.pwd span{
+            display: inline-block;
+            width: 22px;
+            height: 24px;
+            margin-top:12px ;
+            background: url(https://mimg.127.net/p/freemail/index/lib/img/urs/ico-user.png) no-repeat;
+        }
+        .pwd span{
+            background: url("https://mimg.127.net/p/freemail/index/lib/img/urs/ico-password.png") no-repeat;
+        }
+        .input-name input,.input-pwd input{
+            width: 205px;
+            height: 44px;
+            line-height: 46px;
+        }
+        .back-text{
+            float: right;
+            margin-right: 9px;
+            color: #666;
+            height: 46px;
+            line-height: 46px;
+            font-size: 16px;
+            overflow: hidden;
+        }
+        input::placeholder{
+            font-size: 14px;
+            color: #e0e0e0;
+        }
+        .pwd-text{
+            width: 340px;
+            margin: 0 auto;
+        }
+        .pwd-text input{
+            font-size: 14px;
+            float: left;
+         }
+        .text-1{
+            float: left;
+            font-size: 14px;
+            color: #999;
+            line-height: 18px;
+            display: block;
+            height: 16px;
+            padding-left: 8px;
+            cursor: pointer;
+        }
+        .text-1:hover{
+            color: #717171;
+        }
+        .pwd-text span:last-child{
+            float: right;
+            font-size: 14px;
+            color: #3B78DD;
+            height: 16px;
+            display: block;
+            line-height: 16px;
+            margin-right: 7px;
+            cursor: pointer;
+        }
+        .pwd-text span:last-child:hover,.log p:hover{
+            color: #2242a5;
+        }
+        .btn:hover{
+            background-color: #2f53a6;
+        }
+        .btn{
+            width: 340px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            color: #fff;
+            border: 0;
+            border-radius:4px ;
+            background: #3b78dd;
+            margin: 20px 30px;
+            cursor: pointer;
+        }
+        .log p{
+            color: #3B78DD;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            margin-top: 0;
+            cursor: pointer;
+        }
+        .log-foot{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 70px;
+            background-color: #fafafa;
+            border-radius: 0 0 4px 4px;
+        }
+        .log-foot span{
+            display: block;
+            width: 340px;
+            height: 40px;
+            margin: 16px auto 0;
+            background-image: url("https://mimg.127.net/ggimg/all/img21/mail-index-bottom-gg-7.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: pointer;
+        }
+        .logo-right-top{
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkBAMAAACCzIhnAAAAKlBMVEVHcEyHquiGqueGq+iGq+eHrOmGq+eFqueGqueNsO6JrOeHq+eUru2Fqub6x9OvAAAADXRSTlMAXLyHqEiY9eQSKXELCCPK/wAAAcRJREFUWMPt1jFLw1AUBeBTQgs1ix0cC/IGFyn4B7Jo14KL1MVBkbu5uDgFxMUsgmsGwc2pYH9AoJPo4FKFgnL/i0OfbdL2mXcQRKpnKn18PYXb3FdEOpdVALHqEEAwf6qL3iwjiHgS8AQnPKnxZK7GgwTtaVqWHLfbO5YMc8dXluTTtMQmUNW33HFrOUldRETuXeRBRER2iy1NVdV1F3lWVdWtIqnMkPb2ZC4ugqxIctN3kpAnyHgS8gQRTwKeIMqRy7OzUw9S40YJAFh1kcckSZLkfmmfl++QA0sajcaaJe+NaRYtpfDr1RcvIIi8tuVsDUuQ8STkCTKehDzBYExGxpjNvfnAkXj8ie/wzz9RVX1JxxkAeLKvXaRZHN+5vRtco5zcNxyZqfEiFZ4Ua/xIhSeFGk9SFZEjVX0VkcN+v99R1Q0RKZno5+rr2Ybd8h/BJ7nhSe9HyK/7YtVYdWiMaY3F6MIYU2a6fqtvtoYkC2rA14CvAV/jsZ/2k2liP4KSe3/5ST1N0zS9Zkjo/G/pTsaTkCeIeBLwBBFPAp4g4kmNJzjhSY0nuP2rj9gkHZ7c8WQlpgm6PKnyBE2eVHiCjCfhB4/kuLSh1hUaAAAAAElFTkSuQmCC") 50% no-repeat;
+            background-size: 100% 100%;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            z-index: 2;
+            cursor: pointer;
+        }
+    </style>
+    <body>
+        <div class="head">
+            <div class="logo-head"></div>
+        </div>
+        <div class="bg">
+            <div class="main">
+                <div class="link">
+                    <a href="http://r.mail.163.com/r.jsp?url=https%3A%2F%2Fyou.163.com%2Fitem%2Fdetail%3Fid%3D1621025%26from%3Dout_ynzy_mailin_6%26channel_type%3D1&sign=1368451454&_r_ignore_statId=1_16_117_2277&position=0&_r_ignore_uid=nt@163.com" target="_blank"></a>
+                </div>
+                <div class="select-">
+                    <span title="上一张"></span>
+                    <span title="下一张"></span>
+                </div>
+                <div class="wrapper">
+                    <h2 class="title">邮箱帐号登录</h2>
+                    <div class="log">
+                        <div class="logo-right-top"></div>
+                        <div class="input-name">
+                            <div class="usr">
+                                <span></span>
+                            </div>
+                            <input type="text" placeholder="邮箱账号或手机号码">
+                            <div class="back-text">@163.com</div>
+                        </div>
+                        <div class="input-pwd">
+                            <div class="pwd">
+                                <span></span>
+                            </div>
+                            <input type="password" placeholder="输入密码">
+                        </div>
+                        <div class="pwd-text">
+                            <input type="checkbox" >
+                            <span class="text-1">十天内免登录</span>
+                            <span>忘记密码?</span>
+                        </div>
+                        <button class="btn">登&nbsp;&nbsp;录</button>
+                        <p>注册新帐号</p>
+                        <div class="log-foot">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot"></div>
+    </body>
+</html>

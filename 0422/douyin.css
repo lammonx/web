@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    background-color: #e0e0e0;
+}
+.head-line {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding:15px 150px 0px 80px;
+}
+.head-logo {
+    display: block ;
+    width: 108px;
+    height: 45px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/logo_b7a2aca.png");
+}
+.head-list {
+    margin-top: -10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    list-style: none;
+    line-height: 75px;
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+.head-list a {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.4);
+}
+.head-list > li {
+    position: relative;
+    margin-left: 25px;
+}
+.select-img {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/subtract_67c835d.png") center no-repeat;
+    background-size: cover;
+}
+.sound-img {
+    display: block;
+    background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/unmute_1bbc0c3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    margin-top: 125%;
+}
+.head-list-first {
+    position: absolute;
+    background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/create-bubble_c2cd9db.png");
+    background-position: 0 0;
+    background-size: cover;
+    top: 53px;
+    left: 50%;
+    margin-left: -99px;
+    height: 42px;
+    width: 198px;
+    font-size: 14px;
+    color: rgba(255,255,255,.9);
+    text-align: center;
+    line-height: 20px;
+    padding-top: 14px;
+    box-sizing: border-box;
+}
+.head-select {
+    display: none;
+    position: absolute;
+    top: 57px;
+    left: 50%;
+    margin-left: -48px;
+    list-style: none;
+    width: 96px;
+    padding: 8px 0;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(0,0,0,.16),0 0 2px rgba(0,0,0,.12);
+}
+.head-select > li {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    color: rgba(0,0,0,.9);
+}
+.head-select > li:hover {
+    background: rgba(51,51,51,.1);
+}
+.head-list > li:hover .head-select {
+    display: block;
+}
+.mid {
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 50px;
+    right: 150px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+.mid-img {
+    align-self: flex-start;
+    width: 450px;
+    margin-bottom: 50px;
+}
+.mid-img > img {
+    width: 100%;
+}
+.mid-btn {
+    display: flex;
+    cursor: pointer;
+}
+.mid-btn > div {
+    border-radius: 8px;
+    margin-left: 10px;
+    width: 142px;
+    height: 51px;
+    border: 1px solid #000;
+    transition: opacity 0.15s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1px 1px 7px 2px rgba(0,0,0,.54);
+}
+.btn-iphone {
+    background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/appstore_548e83a.png");
+}
+.btn-android {
+    background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/android_d461475.png");
+}
+.mid-btn > .btn-code {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-image: url("https://s3.pstatp.com/aweme/resource/web/static/image/index/download_6c60bcd.png");
+}
+.btn-code > img {
+    width: 223px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scale(0.23);
+    transform-origin: top right;
+    opacity: 0;
+    transition: 0.3s all;
+}
+.btn-code:hover img {
+    opacity: 1;
+    transform: scale(1);
+}
+.btn-code:hover+.btn-iphone,
+.btn-code:hover+.btn-iphone+.btn-android {
+    display: none;
+}
+.btn-android:hover,
+.btn-iphone:hover {
+    opacity: 0.5;
+}
+.foot {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    font-size: 14px;
+    width: 100%;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.4);
+}
+.police {
+    position: relative;
+    top: 4px;
+}
+.foot > ul {
+    justify-content: center;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin-bottom: 16px;
+}
+.foot-list > li {
+    cursor: pointer;
+    padding: 0 5px;
+    display: inline-block;
+    margin: 0;
+}

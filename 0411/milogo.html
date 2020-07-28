@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>小米logo效果</title>
+    </head>
+    <style type="text/css">
+        .wrapper{
+            width: 55px;
+            height: 55px;
+            margin: 100px auto;
+            background-size: 100%;
+            background:url("https://s02.mifile.cn/assets/static/image/mi-home.png") -55px center,url("https://s02.mifile.cn/assets/static/image/mi-logo.png") center;
+            background-repeat: no-repeat;
+            background-color: #ff6700;
+            transition: all .2s;
+        }
+        .wrapper:hover{
+            background:url("https://s02.mifile.cn/assets/static/image/mi-home.png") center,url("https://s02.mifile.cn/assets/static/image/mi-logo.png")55px center;
+            background-repeat: no-repeat;
+            background-color: #ff6700;
+        }
+    </style>
+    <body>
+        <div class="wrapper"></div>
+    </body>
+</html>
